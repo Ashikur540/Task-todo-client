@@ -74,7 +74,7 @@ export const TaskCard = ({ task, refetch, toggleModal, open, taskInfo, setTaskIn
                 </Text>
 
                 <div className="flex gap-4 justify-center">
-                    <Button icon={TickMinor} onClick={() => handleCompleteTask(_id)}></Button>
+                  {!completed && <Button icon={TickMinor} onClick={() => handleCompleteTask(_id)}></Button>}
                     {activator}
                     {open && <EditModal taskInfo={taskInfo} toggleModal={toggleModal} open={open} />}
                     <button onClick={() => handleDeleteTask(_id)}><Icon source={DeleteMinor} color="critical" /></button>

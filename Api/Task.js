@@ -9,7 +9,15 @@ export const getAllTasks = async () => {
         console.log(error.message)
     }
 }
-
+export const getSearchedTask = async (searchKey) => {
+  try {
+      const res = await instance.get(`/tasks?name=${searchKey}`);
+      console.log(res);
+      return res;
+  } catch (error) {
+      console.log(error.message)
+  }
+}
 // create task 
 export const createNewTask = async (taskData) => {
     try {
