@@ -5,7 +5,7 @@ import "@shopify/polaris/build/esm/styles.css";
 import { useCallback, useState } from "react";
 
 const CreateTask = ({ refetch }) => {
-    const [text, setText] = useState("Type your task here...");
+    const [text, setText] = useState("");
     // // useEffect(() => { }, [text])
 
 
@@ -19,14 +19,14 @@ const CreateTask = ({ refetch }) => {
     const handleAddTask = useCallback((e) => {
 
         let taskTitle = e.target.name.value;
-        console.log(taskTitle);
+        // console.log(taskTitle);
         const taskData = {
             taskTitle, completed: false,
         }
         createNewTask(taskData)
             .then(data => {
-                console.log(data);
-                if (data.acknowledged) {
+                // console.log(data);
+                if (data) {
                     <Toast content="Task added successfully"></Toast>
                     refetch()
                 }

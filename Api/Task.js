@@ -12,7 +12,7 @@ export const getAllTasks = async () => {
 export const getSearchedTask = async (searchKey) => {
   try {
       const res = await instance.get(`/tasks?name=${searchKey}`);
-      console.log(res);
+      // console.log(res);
       return res;
   } catch (error) {
       console.log(error.message)
@@ -23,7 +23,7 @@ export const createNewTask = async (taskData) => {
     try {
       const url = `/tasks`;
       const response = await instance.post(url, taskData);
-      console.log(response)
+      // console.log(response)
       return response;
     } catch (error) {
       console.log(error.message);
@@ -34,7 +34,7 @@ export const createNewTask = async (taskData) => {
     try {
         const url = `/tasks/${id}`;
         const res = await instance.delete(url, { data: { id } });
-        console.log(res);
+        // console.log(res);
         return res;
       } catch (error) {
         console.log(error.message);
@@ -45,7 +45,7 @@ export const createNewTask = async (taskData) => {
     try {
         const url = `/tasks/${id}`;
         const res = await instance.patch(url);
-        console.log(res);
+        // console.log(res);
         return res;
       } catch (error) {
         console.log(error.message);
@@ -57,7 +57,7 @@ export const createNewTask = async (taskData) => {
     try {
       const url = `/tasks/${id}`;
       const res = await instance.put(url,modifiedData);
-      console.log(res);
+      // console.log(res);
       return res;
     } catch (error) {
       console.log(error.message);

@@ -1,5 +1,4 @@
 import { getAllTasks, getSearchedTask } from '@/Api/Task';
-import { Spinner } from '@shopify/polaris';
 import { useQuery } from '@tanstack/react-query';
 import { useEffect, useState } from 'react';
 import CreateTask from './CreateTask';
@@ -7,7 +6,7 @@ import { MyTasks } from './MyTasks';
 
 export const HomeSection = () => {
   const [searchedTask, setSearchedTask] = useState("")
-  console.log(searchedTask)
+  // console.log(searchedTask)
 
 
   const {
@@ -25,7 +24,7 @@ export const HomeSection = () => {
   useEffect(() => {refetch() }, [allTasks, searchedTask])
 
 
-  console.log(allTasks)
+  // console.log(allTasks)
   return (
     <div>
       <CreateTask refetch={refetch} />

@@ -38,7 +38,7 @@ export const TaskCard = ({ task, refetch, toggleModal, open, taskInfo, setTaskIn
 
     const handleDeleteTask = (id) => {
         deleteTask(id).then(data => {
-            console.log(data);
+            // console.log(data);
             if (data.acknowledged) {
                 toggleActive()
                 active ? (
@@ -53,7 +53,7 @@ export const TaskCard = ({ task, refetch, toggleModal, open, taskInfo, setTaskIn
     const handleCompleteTask = (id) => {
 
         completeTask(id).then(data => {
-            console.log(data);
+            // console.log(data);
             if (data.acknowledged) {
                 toggleActive()
                 active ? (
