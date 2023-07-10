@@ -68,9 +68,13 @@ export const TaskCard = ({ task, refetch, toggleModal, open, taskInfo, setTaskIn
         <>
 
             <div className="flex justify-between mt-4 bg-white shadow-md px-6 py-3.5 rounded-md">
-                <Text variant="headingSm" as="h6">
-                    {taskTitle}
-                    {completed ? "✔" : "❌"}
+                <Text variant="headingSm" as="h6" >
+                    {completed ? <span style={{ textDecoration: 'line-through' }}>
+                        {taskTitle} ✔
+                    </span>
+                        :
+                        <span>{taskTitle}❌</span>
+                    }
                 </Text>
 
                 <div className="flex gap-4 justify-center">
