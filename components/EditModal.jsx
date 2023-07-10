@@ -13,7 +13,7 @@ export const EditModal = ({ toggleModal, open, taskInfo,refetch }) => {
         }
         editTask(_id, modifiedData)
             .then(data => {
-                console.log(data);
+                // console.log(data);
                 if(data.success){
                     alert("Task modified successfully");
                     refetch()
